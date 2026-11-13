@@ -1,0 +1,23 @@
+[project]
+name = "bex-measure"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.6",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "pandas>=3.1.1",
+    "pyserial>=3.5",
+    "pythonnet>=3.2.1",
+    "scipy>=1.18.1",
+]
+
+[project.scripts]
+bex-measure = "bex_measure:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
