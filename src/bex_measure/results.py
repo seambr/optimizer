@@ -56,7 +56,7 @@ class PointData:
         else:
             fig = ax.figure
 
-
+        x, y = self.x, self.y
         if connect:
             ax.plot(x, y, color="gray", alpha=0.4, linewidth=1)
 
