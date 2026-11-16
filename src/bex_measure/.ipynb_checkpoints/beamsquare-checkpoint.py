@@ -27,3 +27,22 @@ def get_beam_centroid() -> tuple[float, float]:
     y = results.CentroidY
     return x, y
 
+
+
+from beamsquared import BeamSquared
+import time
+
+bs = BeamSquared()
+bs.initialize()
+
+try:
+    bs.start_live()
+    time.sleep(1)  # Give acquisition time to begin
+
+    for _ in range(100):
+        x, y = bs.get_centroid()
+        print(f"X: {x:.3f}, Y: {y:.3f}")
+        time.sleep(0.1)
+
+finally:
+    bs.close()  # Also runs if the loop errors or is interrupted
